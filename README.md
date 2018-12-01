@@ -23,6 +23,7 @@ at the puzzle.
 - Perl
 - Haskell
 - Scala
+- SQL
 - Scheme
 - Simula
 - Common Lisp
@@ -34,5 +35,4 @@ at the puzzle.
 - Julia
 - IDL
 - Lua
-- Processing
 
