@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+test -x build/bf || cc -O3 support/brainfuck-c/brainfuck.c -o build/bf
+
+./build/bf day1.bf

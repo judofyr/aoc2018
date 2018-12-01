@@ -7,11 +7,10 @@ at the puzzle.
 
 ## Languages used so far
 
-(none)
+- [Day 1: Brainfuck](day1.bf) (only part 1)
 
 ## Languages yet to be used
 
-- Brainfuck
 - Whitespace
 - Go
 - Assembly
