@@ -8,10 +8,10 @@ at the puzzle.
 ## Languages used so far
 
 - [Day 1: Brainfuck](day1.bf) (only part 1)
+- [Day 2: Whitespace](day2.ws) (only part 1)
 
 ## Languages yet to be used
 
-- Whitespace
 - Go
 - Assembly
 - JS

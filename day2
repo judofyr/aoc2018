@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+./support/whitespace/ws day2.ws
