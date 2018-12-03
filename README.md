@@ -26,7 +26,6 @@ at the puzzle.
 - Scala
 - SQL
 - Scheme
-- Simula
 - Common Lisp
 - COBOL
 - Maude
