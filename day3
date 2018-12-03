@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+CIM_DIR="$HOME/Documents/OpenSource/cim"
+export DYLD_LIBRARY_PATH="$CIM_DIR/lib/.libs"
+
+"$CIM_DIR/src/cim" \
+  -L"$CIM_DIR/lib" \
+  -L"$CIM_DIR/lib/.libs" \
+  -I"$CIM_DIR/lib" \
+  --memory-pool-size=100 \
+  day3prog.sim
+
+./day3prog

@@ -1,0 +1,84 @@
+begin
+  class claim(x, y, w, h);
+  integer x, y, w, h;
+  begin;
+  end;
+
+  ref(claim) array claims(1:2000);
+  integer array counts(0:1000, 0:1000);
+
+  procedure fill(c);
+  ref(claim) c;
+  begin integer i, j;
+    for i := 0 step 1 until c.w - 1 do
+    for j := 0 step 1 until c.h - 1 do
+    begin integer val;
+      val := counts(i+c.x, j+c.y);
+      counts(i+c.x, j+c.y) := val + 1;
+    end;
+  end;
+
+  integer procedure countconflict();
+  begin integer count, i, j;
+    for i := 0 step 1 until 1000 do
+    for j := 0 step 1 until 1000 do
+    begin integer val;
+      val := counts(i, j);
+      if val >= 2 then count := count + 1;
+    end;
+
+    countconflict := count;
+  end;
+
+  boolean procedure isunique(c);
+  ref(claim) c;
+  begin integer i, j;
+    isunique := true;
+    for i := 0 step 1 until c.w - 1 do
+    for j := 0 step 1 until c.h - 1 do
+    begin integer val;
+      val := counts(i+c.x, j+c.y);
+      if val > 1 then begin;
+        isunique := false;
+        goto ret;
+      end;
+    end;
+  ret:
+  end;
+
+
+  while not endfile do
+  begin integer id, x, y, w, h;
+    inchar;
+    id := inint;
+    inchar; inchar; inchar;
+    x := inint;
+    inchar;
+    y := inint;
+    inchar; inchar;
+    w := inint;
+    inchar;
+    h := inint;
+    inimage;
+    claims(id) :- new claim(x, y, w, h);
+    fill(claims(id));
+  end;
+  
+  outint(countconflict, 10);
+  outimage;
+
+  begin integer id;
+    id := 1;
+    while claims(id) =/= none do begin;
+      if isunique(claims(id)) then begin;
+        outint(id, 10);
+        outimage;
+        goto done;
+      end;
+      id := id + 1;
+    end;
+  end;
+
+  done:
+end
+
