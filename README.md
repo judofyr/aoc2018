@@ -10,6 +10,7 @@ at the puzzle.
 - [Day 1: Brainfuck](day1.bf) (only part 1)
 - [Day 2: Whitespace](day2.ws) (only part 1)
 - [Day 3: Simula67](day3prog.sim)
+- [Day 4: Pascal](day4prog.pas)
 
 ## Languages yet to be used
 
@@ -17,7 +18,6 @@ at the puzzle.
 - Assembly
 - JS
 - Kotlin
-- Pascal
 - Visual Basic
 - C#
 - PHP
