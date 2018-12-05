@@ -1,0 +1,102 @@
+fmod PART1 is
+  protecting STRING .
+  protecting NAT .
+
+  sort Polymer .
+  subsort Char < Polymer .
+  op start : -> Polymer [ctor] .
+  op _++_ : Polymer Char -> Polymer [ctor] .
+  op swapcase : Char -> Char .
+
+  op chain : Polymer Char -> Polymer .
+  op polylen : Polymer -> Nat .
+
+  op solve1 : String -> Nat .
+  op parse : Polymer String -> Polymer .
+
+  vars S S' : String .
+  vars C C' : Char .
+  vars P P' : Polymer .
+  vars N N' : Nat .
+
+  eq swapcase(C) =
+    if (ascii(C) >= 97) then
+      char(sd(ascii(C), 32))
+    else
+      char(ascii(C) + 32)
+    fi .
+
+  eq chain(start, C') = start ++ C' .
+
+  eq chain(P ++ C, C') =
+    if C == swapcase(C') then
+      P
+    else
+      P ++ C ++ C'
+    fi .
+
+  eq polylen(start) = 0 .
+  eq polylen(P ++ C) = polylen(P) + 1 .
+
+  eq parse(P, S) =
+    if length(S) == 0 then
+      P
+    else
+      parse(chain(P, substr(S, 0, 1)), substr(S, 1, length(S)))
+    fi .
+
+  eq solve1(S) = polylen(parse(start, S)) .
+endfm
+
+fmod PART2 is
+  protecting PART1 .
+
+  op parseWithout : Polymer String Char -> Polymer .
+  op findBest : String Char -> Nat .
+  op solve2 : String -> Nat .
+
+  vars S S' : String .
+  vars C C' : Char .
+  vars P P' : Polymer .
+  vars N N' : Nat .
+
+  eq parseWithout(P, S, C) =
+    if length(S) == 0 then
+      P
+    else
+      if substr(S, 0, 1) == C or substr(S, 0, 1) == swapcase(C) then
+        parseWithout(P, substr(S, 1, length(S)), C)
+      else
+        parseWithout(chain(P, substr(S, 0, 1)), substr(S, 1, length(S)), C)
+      fi
+    fi .
+
+  eq findBest(S, C) =
+    if C == "z" then
+      polylen(parseWithout(start, S, "z"))
+    else
+      min(
+        polylen(parseWithout(start, S, C)),
+        findBest(S, char(ascii(C) + 1))
+      )
+    fi .
+
+  eq solve2(S) = findBest(S, "a") .
+endfm
+
+fmod BOTH is
+  protecting PART1 .
+  protecting PART2 .
+
+  sort Solutions .
+  op solutions : Nat Nat -> Solutions [ctor] .
+  op solve : String -> Solutions .
+
+  vars S : String .
+
+  eq solve(S) = solutions(
+    solve1(S),
+    solve2(S)
+  ) .
+endfm
+

@@ -11,6 +11,7 @@ at the puzzle.
 - [Day 2: Whitespace](day2.ws) (only part 1)
 - [Day 3: Simula67](day3prog.sim)
 - [Day 4: Pascal](day4prog.pas)
+- [Day 5: Maude](day5.maude)
 
 ## Languages yet to be used
 
@@ -28,7 +29,6 @@ at the puzzle.
 - Scheme
 - Common Lisp
 - COBOL
-- Maude
 - SML
 - Ada
 - Fortran

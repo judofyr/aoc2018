@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+INPUT=$(cat)
+maude day5.maude
+echo "red solve(\"$INPUT\")." | maude day5.maude
