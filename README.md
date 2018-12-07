@@ -12,11 +12,11 @@ at the puzzle.
 - [Day 3: Simula67](day3prog.sim)
 - [Day 4: Pascal](day4prog.pas)
 - [Day 5: Maude](day5.maude)
+- Day 6: Assembly - work in progress
 
 ## Languages yet to be used
 
 - Go
-- Assembly
 - JS
 - Kotlin
 - Visual Basic
