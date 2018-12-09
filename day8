@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+cobc -x day8prog.cob
+./day8prog
