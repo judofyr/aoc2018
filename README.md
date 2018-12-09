@@ -13,6 +13,7 @@ at the puzzle.
 - [Day 4: Pascal](day4prog.pas)
 - [Day 5: Maude](day5.maude)
 - Day 6: Assembly - work in progress
+- Day 7: SML - work in progress
 - [Day 8: COBOL](day8prog.cob)
 - [Day 9: IDL](day9.pro)
 
