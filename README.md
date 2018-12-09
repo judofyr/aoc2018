@@ -13,6 +13,7 @@ at the puzzle.
 - [Day 4: Pascal](day4prog.pas)
 - [Day 5: Maude](day5.maude)
 - Day 6: Assembly - work in progress
+- [Day 9: IDL](day9.pro)
 
 ## Languages yet to be used
 
@@ -33,6 +34,5 @@ at the puzzle.
 - Ada
 - Fortran
 - Julia
-- IDL
 - Lua
 
